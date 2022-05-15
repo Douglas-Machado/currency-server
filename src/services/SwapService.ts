@@ -1,19 +1,16 @@
 import axios from "axios"
 import "dotenv/config"
 
-// interface IParams {
-//   from: String;
-//   to: String;
-//   amount: Number
-// }
-
-// https://free.currconv.com/api/v7/convert?q=USD_PHP&compact=ultra&apiKey=d70140fd3dc3f3227cd3
+const url = "https://free.currconv.com/api/v7/convert?q="
+const urlParam = "&compact=ultra&apiKey="
 
 export class SwapService {
-  async execute(from: string, to: string, amount: string){
-    // console.log(process.env.FREE_URL)
-    const result = await axios.get(`${process.env.FREE_URL}BRL_USD
-    ${process.env.URL_PARAMS}${process.env.API_KEY}`)
-    console.log(result.data)
+  async execute(from: string, to: string, amount: number){
+    const response: any = await axios.get(
+      `${url}${from}_${to}${urlParam}${process.env.API_KEY}`
+    )
+    const parsedValues:any = Object.values(response.data)[0]
+    const result = amount * parsedValues
+    return result
   }
 }
