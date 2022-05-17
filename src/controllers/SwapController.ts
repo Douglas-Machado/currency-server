@@ -6,7 +6,7 @@ export class SwapController {
     const { from, to, amount } = req.body;
 
     const service = new SwapService()
-    const result = await service.execute(from, to, amount)
+    const result = await service.execute({from, to, amount})
     return res.json({value: result})
   }
 } 
