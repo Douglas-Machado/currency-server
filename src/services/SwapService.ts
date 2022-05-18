@@ -2,25 +2,29 @@ import axios from "axios"
 import "dotenv/config"
 
 interface IParams {
-  from: string,
-  to: string,
-  amount: number
+  from: String,
+  to: String,
+  amount?: number
 }
 
-const url = "https://free.currconv.com/api/v7/convert?q="
-const urlParam = "&compact=ultra&apiKey="
 
 export class SwapService {
   async execute({from, to, amount}: IParams){
+    if(!from || !to) throw new Error("missing params")
     try{
       const response = await axios.get(
-        `${url}${from}_${to}${urlParam}${process.env.API_KEY}`
+        `${process.env.URL}${process.env.SWAP_QUERY}${from}_${to}${process.env.SWAP_PARAM}${process.env.API_KEY}`
       )
+      if(response.status !== 200) throw new Error("something went wrong")
       const parsedValues: any = Object.values(response.data)[0]
-      const result = amount * parsedValues
-      return result
-    }catch(e){
-      console.log(e)
+      if(amount) {
+        const result = amount * parsedValues
+        if(isNaN(result)) throw new Error("amount must be an integer")
+        return result.toFixed(2)
+      }
+      return parsedValues.toFixed(2)
+    }catch(e: any){
+      throw new Error(e.message)
     }
   }
 }
