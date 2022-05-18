@@ -1,6 +1,6 @@
 # CURRENCY CONVERTER NODE
 
-#### Languages, Frameworks
+#### Languages, Frameworks, API's
 
 * [JS](https://www.javascript.com)
 
@@ -9,6 +9,8 @@
 * [Express](https://expressjs.com)
 
 * [Axios](https://axios-http.com)
+
+* [API](https://www.currencyconverterapi.com)
 
 ### Using
 
@@ -26,8 +28,8 @@
 
   ## POST
 
-  - from(string)
-  - to(string)
+  - from(string, required)
+  - to(string, required)
   - amount(integer)
 
   [`localhost:3333/swap`](http://localhost:4000/swap)
