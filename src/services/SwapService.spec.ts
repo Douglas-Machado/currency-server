@@ -33,4 +33,12 @@ describe('Swap', () => {
       amount: 10
     })).rejects.toThrow()
   })
+
+  test('should return an error when any currency doest not exist', async () => {
+    await expect(swapService.execute({
+      from: 'aaa',
+      to: 'brl',
+      amount: 10
+    })).rejects.toThrow()
+  })
 })
