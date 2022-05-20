@@ -14,11 +14,13 @@
 
 ### Using
 
- Run `npm install` or `yarn` to get the packages
+  Configure your .env url and apikey. Url example: [API documentation](https://www.currencyconverterapi.com/docs)
 
- Run `npm run dev` or `yarn dev` to start the application
+  Run `npm install` to get the packages
 
- Rub `npm run test` to see the coverage or open the index.html in `coverage/lcov-report`
+  Run `npm run dev` to start the application
+
+  Rub `npm run test` to see the coverage or open the index.html in `coverage/lcov-report`
 
 ### Request examples
     
