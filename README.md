@@ -14,7 +14,7 @@
 
 ### Using
 
-  Configure your .env url and apikey. Url example: [API documentation](https://www.currencyconverterapi.com/docs)
+  Make sure to add your apiKey in .env [Free API key](https://free.currencyconverterapi.com/free-api-key)
 
   Run `npm install` to get the packages
 
