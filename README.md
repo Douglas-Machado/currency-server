@@ -20,7 +20,7 @@
 
   Run `npm run dev` to start the application
 
-  Rub `npm run test` to see the coverage or open the index.html in `coverage/lcov-report`
+  Run `npm run test` to see the coverage or open the index.html in `coverage/lcov-report`
 
 ### Request examples
     
