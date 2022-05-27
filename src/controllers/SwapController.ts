@@ -11,7 +11,7 @@ export class SwapController {
 
       return res.json({value: result})
     }catch(e: any){
-      return res.status(400).json({error: e.message})
+      return res.status(e.response.status).json({error: e.message})
     }
   }
 }

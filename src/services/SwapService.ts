@@ -12,7 +12,7 @@ export class SwapService {
     if(!from || !to) throw new Error("missing params")
     try{
       const response = await axios.get(
-        `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=${process.env.API_KEY}`
+        `https://free.currconv.com/api/v7/convert${from}_${to}&compact=ultra&apiKey=${process.env.API_KEY}`
       )
       if(Object.keys(response.data).length === 0) throw new Error("something went wrong")
       if(response.status !== 200) throw new Error("something went wrong")
@@ -23,8 +23,8 @@ export class SwapService {
         return result.toFixed(2)
       }
       return parsedValues.toFixed(2)
-    }catch(e: any){
-      throw new Error(e.message)
+    }catch(e){
+      throw(e)
     }
   }
 }

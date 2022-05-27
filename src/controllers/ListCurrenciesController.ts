@@ -8,8 +8,8 @@ export class ListCurrenciesController {
       const result = await service.execute()
   
       return res.json(result)
-    }catch{
-      return res.status(400).send({error: "Something went wrong"})
+    }catch(e: any){
+      return res.status(e.response.status).send({error: e.message})
     }
   }
 }
