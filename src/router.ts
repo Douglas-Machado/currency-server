@@ -1,10 +1,15 @@
 import { Router } from "express";
-import { ListCurrenciesController } from "./controllers/ListCurrenciesController";
-import { SwapController } from "./controllers/SwapController";
+import { listCurrenciesController } from "./useCases/ListCurrencies";
+import { swapController } from "./useCases/SwapCurrency";
 
 const router = Router()
 
-router.post('/swap', new SwapController().handle)
-router.get('/currencies', new ListCurrenciesController().handle)
+router.get('/currencies', (request, response) => {
+  return listCurrenciesController.handle(request, response)
+})
+
+router.post('/swap', (request, response) => {
+  return swapController.handle(request, response)
+})
 
 export { router }
