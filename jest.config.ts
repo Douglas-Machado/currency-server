@@ -14,7 +14,7 @@ export default {
   // cacheDirectory: "C:\\Users\\dougl\\AppData\\Local\\Temp\\jest",
 
   // Automatically clear mock calls, instances, contexts and results before every test
-  // clearMocks: false,
+  clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
@@ -174,7 +174,7 @@ export default {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.(t|j)sx?$": ["@swc/jest"]
+    "^.+\\.(t)sx?$": ["@swc/jest"]
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
