@@ -41,6 +41,6 @@
   {
     "from": "usd",
     "to": "brl",
-    "amount": 5
+    "amount": 10
   }
 ```
