@@ -12,4 +12,10 @@ router.post('/swap', (request, response) => {
   return swapController.handle(request, response)
 })
 
+router.get('/', (request, response) => {
+  return response.json( {
+    status: "OK"
+  })
+})
+
 export { router }
